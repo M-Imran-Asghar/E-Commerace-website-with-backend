@@ -1,15 +1,23 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../store/AuthContext";
+// import { useAuth } from "../store/AuthContext";
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 function Navbar() {
-  const { isLoggedIn, 
-    logout, 
-    refreshTokens, 
-    accessToken, 
-    getRefreshToken
-   } = useAuth();
+  // const { 
+  //   isLoggedIn, 
+  //   logout, 
+  //   // refreshTokens, 
+  //   // accessToken, 
+  //   // getRefreshToken,
+  //   cartCount
+  //  } = useAuth();
 
+  //  const handleLogout = () => {
+  //   if(isLoggedIn){
+  //     logout()
+  //   }
+  //  }
   
 
   return (
@@ -50,14 +58,7 @@ function Navbar() {
             </li>
 
             <li>
-              {isLoggedIn ? 
-                <button
-                  className="duration-200 font-bold text-sm p-2 text-indigo-900"
-                  onClick={logout}
-                  >
-                  Logout
-                </button>
-               : 
+              
                 <NavLink
                   to="/login"
                   className={({ isActive }) =>
@@ -70,7 +71,15 @@ function Navbar() {
                 >
                   Login
                 </NavLink>
-              }
+              
+            </li>
+            <li>
+            <button
+                  className="duration-200 font-bold text-sm p-2 text-indigo-900"
+                  // onClick={()=>handleLogout()}
+                  >
+                  Logout
+                </button>
             </li>
 
             <li>
@@ -89,7 +98,7 @@ function Navbar() {
             </li>
 
             <li>
-              {isLoggedIn ? (
+              
                 <NavLink
                   to="/AddProduct"
                   className={({ isActive }) =>
@@ -102,27 +111,31 @@ function Navbar() {
                 >
                   Add Product
                 </NavLink>
-              ) : (
-                ""
-              )}
+              
             </li>
 
-            <li>
-              
-                <NavLink
-                  to="/store"
-                  className={({ isActive }) =>
-                    `duration-200 font-bold text-sm p-2 ${
-                      isActive
-                        ? "text-gray-900 hover:underline"
-                        : "text-indigo-900"
-                    }`
-                  }
-                >
-                 Store
-                </NavLink>
-              
+            <li className="flex items-center justify-center">
+              <NavLink
+                to="/AddToCart"
+                className={({ isActive }) =>
+                  `duration-200 font-bold text-sm p-2 ${
+                    isActive
+                      ? "text-gray-900 hover:underline"
+                      : "text-indigo-900"
+                  }`
+                }
+              >
+                <div>
+                <button className="text-3xl flex " >
+                  <MdOutlineShoppingCart /> 
+                  <p className="relative text-lg font-bold"  style={{top: -14}} >
+                    
+                  </p>
+                </button>
+                </div>
+              </NavLink>
             </li>
+
 
           </ul>
         </nav>

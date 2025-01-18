@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { useAuth } from "../store/AuthContext";
+// import { useAuth } from "../store/AuthContext";
 
 function AddProduct() {
 
-  const { Addproducts } = useAuth()
+  // const { Addproducts } = useAuth()
   const {
     register,
     reset,

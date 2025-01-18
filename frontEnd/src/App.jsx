@@ -11,7 +11,7 @@ import Layout from "./components/layout/Layout.jsx";
 import MainSection from "./components/pages/MainSection.jsx";
 import UserProfile from "./components/pages/UserProfile.jsx";
 import AddProduct from "./components/pages/AddProduct.jsx";
-import CreateStore from "./components/pages/CreateStore.jsx";
+import AddToCart from "./components/pages/AddToCart.jsx";
 
 function App() {
   const router = createBrowserRouter(
@@ -22,7 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/AddProduct" element={<AddProduct />} />
-        <Route path="/store" element={<CreateStore/>} />
+        <Route path="/AddToCart" element={<AddToCart/>} />
       </Route>
     )
   );

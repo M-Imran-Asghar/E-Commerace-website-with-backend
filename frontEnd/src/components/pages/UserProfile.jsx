@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../store/AuthContext";
+// import { useAuth } from "../store/AuthContext";
 import { useForm } from "react-hook-form";
 
 function UserProfile() {
-  const {
-    isLoggedIn,
-    getUserdata,
-    user,
-    changeUserAvatar,
-    updateUsernameAndEmail,
-    updatePassword
-  } = useAuth();
+  // const {
+  //   isLoggedIn,
+  //   getUserdata,
+  //   user,
+  //   changeUserAvatar,
+  //   updateUsernameAndEmail,
+  //   updatePassword
+  // } = useAuth();
   const [editProfile, setEditProfile] = useState({ style: "hidden" });
 
   useEffect(() => {

@@ -25,8 +25,7 @@ app.use("/api/v1/products", productsRouter)
 import orderRouter from "./routes/Order.router.js"
 app.use("/api/v1/orders", orderRouter)
 
-import storeRouter from "./routes/Store.router.js"
-app.use("/api/v1/store", storeRouter) 
+
 
 
 

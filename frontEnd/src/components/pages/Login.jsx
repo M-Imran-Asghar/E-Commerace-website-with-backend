@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useAuth } from "../store/AuthContext";
+// import { useAuth } from "../store/AuthContext";
 import { useNavigate } from 'react-router';
 
 function Login() {
-  const { isLoggedIn, login } = useAuth();
+  // const { isLoggedIn, login } = useAuth();
   const navigate = useNavigate()
   const {
     register,
@@ -14,7 +14,7 @@ function Login() {
   } = useForm();
 
   const onSubmit =async (data) => {
-    await login(data)
+    // await login(data)
   };
 
   useEffect(() => {

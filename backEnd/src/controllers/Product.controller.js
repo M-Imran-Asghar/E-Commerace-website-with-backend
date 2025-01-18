@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import { Product } from "../models/Product.model.js";
-import { Store } from "../models/Store.model.js"
 import { ApiError } from "../utils/ApiError.js";
 import { Apiresponse } from "../utils/ApiResponse.js";
 import { AsyncHandler } from "../utils/AsyncHandler.js";
@@ -51,7 +50,7 @@ const addProducts = AsyncHandler(async (req, res) => {
       throw new ApiError(400, "product not created");
     }
 
-    return res
+    return res 
       .status(201)
       .json(new Apiresponse(201, "Product created successfully"));
   } catch (error) {
@@ -91,7 +90,9 @@ const getProductById = AsyncHandler(async (req, res) => {
 
   return res
     .status(200)
-    .json(new Apiresponse(200, product, "product is get successfully"));
+    .json({
+      product
+    });
 });
 
 const updateProducts = AsyncHandler(async (req, res) => {
